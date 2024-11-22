@@ -1,0 +1,26 @@
+LOGPATH: ./log/MELD/vis
+DATA:
+  DATA_PATH: ./dataset/MELD/meld_bert_feature.pkl
+  AUDIO_MAX_LENGTH: 56000
+  Trans_BIAS: 0.7756
+MODEL:
+  NUM_CLASSES: 7
+  AUDIO_DIM: 768
+  TEXT_DIM: 768
+  HIDDEN_DIM: 768
+  T_S: 0.05
+  T_I: 1.0
+  T_E: 1.0
+TRAIN:
+  BASE_LR: 5.0e-04
+  EPOCHS: 20
+  EPOCHS_TEACH: 0
+  WARMUP_EPOCHS: 5 # 5
+  WARMUP_LR: 5.0e-07
+  WEIGHT_DECAY: 0.05
+  OPTIMIZER:
+    NAME: adam
+  LR_SCHEDULER:
+    DECAY_EPOCHS: 10
+    DECAY_RATE: 0.1
+    NAME: linear
